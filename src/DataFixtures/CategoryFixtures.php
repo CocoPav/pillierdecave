@@ -25,6 +25,18 @@ class CategoryFixtures extends Fixture
         $manager->persist($champagne);
         $this->addReference("cat-champagne", $champagne);
 
+        $vin = new Category();
+        $vin->setName("Vin");
+        $manager->persist($vin);
+        $this->addReference("cat-vin", $vin);
+
+        $vodka = new Category();
+        $vodka->setName("Vodka");
+        $manager->persist($vodka);
+        $this->addReference("cat-vodka", $vodka);
+
+
+
         $manager->flush();
     }
 }

@@ -33,6 +33,12 @@ class Alcohol
      */
     private $users;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="alcohols")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $category;
+
     public function __construct()
     {
         $this->userBoxes = new ArrayCollection();
@@ -108,6 +114,18 @@ class Alcohol
             $this->users->removeElement($user);
             $user->removeAlcohol($this);
         }
+
+        return $this;
+    }
+
+    public function getCategory(): ?Category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?Category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }

@@ -23,6 +23,14 @@ class AlcoholFixtures extends Fixture implements DependentFixtureInterface
         $manager->persist($moet);
 
         $manager->flush();
+
+
+        $chouffe = new Alcohol();
+        $chouffe->setName("Chouffe");
+        $chouffe->setCategory($this->getReference("cat-biere"));
+        $manager->persist($chouffe);
+
+        $manager->flush();
     }
 
     /**

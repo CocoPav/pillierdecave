@@ -17,7 +17,7 @@ class BoxFixtures extends Fixture
         $découverte->setDescription("Ceci est une description");
         $découverte->setImage("box1.jpg");
         $découverte->setPrice(12);
-        $découverte->persist($découverte);
+        $manager->persist($découverte);
         $this->addReference("box-découverte", $découverte);
 
        
@@ -26,7 +26,7 @@ class BoxFixtures extends Fixture
         $surmesure->setDescription("Ceci est une description");
         $surmesure->setImage("box2.jpg");
         $surmesure->setPrice(2);
-        $surmesure->persist($surmesure);
+        $manager->persist($surmesure);
         $this->addReference("box-surmesure", $surmesure);
 
        
@@ -35,7 +35,7 @@ class BoxFixtures extends Fixture
         $surprise->setDescription("Ceci est une description");
         $surprise->setImage("box3.jpg");
         $surprise->setPrice(14);
-        $surprise->persist($surprise);
+        $manager->persist($surprise);
         $this->addReference("box-surprise", $surprise);
 
        

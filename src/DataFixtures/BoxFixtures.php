@@ -12,7 +12,7 @@ class BoxFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $découverte = new Box();
-        $whisky->setName("découverte");
+        $découverte->setName("découverte");
         $manager->persist($découverte);
         $this->addReference("box-découverte", $découverte);
 
@@ -22,7 +22,7 @@ class BoxFixtures extends Fixture
         $this->addReference("box-surmesure", $surmesure);
 
         $surprise = new Box();
-        $surprise ->setName("surprise ");
+        $surprise ->setName("suxrprise ");
         $manager->persist($surprise );
         $this->addReference("box-surprise ", $surprise);
 

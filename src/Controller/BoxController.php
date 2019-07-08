@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Alcohol;
 use App\Entity\Box;
 use App\Form\BoxType;
 use App\Repository\BoxRepository;
@@ -53,8 +54,15 @@ class BoxController extends AbstractController
      */
     public function show(Box $box): Response
     {
+        $alcohols = [];
+
+        if ($box->getTitle() == "surmesure") {
+            $alcohols = $this->getDoctrine()->getRepository(Alcohol::class)->findAll();
+        }
+
         return $this->render('box/show.html.twig', [
             'box' => $box,
+            'alcohols' => $alcohols
         ]);
     }
 

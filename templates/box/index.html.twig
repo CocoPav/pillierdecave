@@ -3,39 +3,31 @@
 {% block title %}Box index{% endblock %}
 
 {% block body %}
-    <h1>Box index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Image</th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for box in boxes %}
-            <tr>
-                <td>{{ box.id }}</td>
-                <td>{{ box.title }}</td>
-                <td>{{ box.image }}</td>
-                <td>{{ box.description }}</td>
-                <td>{{ box.price }}</td>
-                <td>
-                    <a href="{{ path('box_show', {'id': box.id}) }}">show</a>
-                    <a href="{{ path('box_edit', {'id': box.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <h1>Box index</h1>
+    <div class="titrepage">
+        <a class="retour" href="{{ path('homepage') }}"><img src="https://image.flaticon.com/icons/svg/271/271226.svg" height="20px"></a>
+        <h3>  {{ box.title }}</h3>
+    </div>
+
+    <div class="thumbnail">
+        <img style="width: 100%;" src={{ asset('images/' ~ box.image) }}  />
+        <p class="thumbnailtitle">Titre de l'article</p>
+    </div>
+
+    <div class="description">
+        <h3>Description</h3>
+        <p>Ideo urbs venerabilis post superbas efferatarum gentium cervices oppressas latasque leges fundamenta libertatis et retinacula sempiterna velut frugi parens et prudens et dives Caesaribus tamquam liberis suis regenda patrimonii iura permisit.</p>
+    </div>
+
+    <div class="Prix">
+        <h3>Prix</h3>
+        <p>{{ box.price }}</p>
+    </div>
+
+    <div>
+
+    </div>
 
     <a href="{{ path('box_new') }}">Create new</a>
 {% endblock %}

@@ -153,6 +153,9 @@ h2::after {
     position: relative;
     margin: 0;
 }
+
+
+
 #decouvrir h3::after {
     position: absolute;
     display: block;

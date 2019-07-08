@@ -12,14 +12,15 @@
 
         <div class="carousel">
             {% for box in boxes %}
-                {{ box.title }}
+                    {{ box.title }}
+                    {{ asset('images/' ~ box.Image()) }}
+                <a id="decouvrir" href="{{ path('box_show', {'id': box.id}) }}">
+                    <h3>Découvrir</h3>
+                    <img src="https://image.flaticon.com/icons/svg/271/271226.svg" height="20px">
+                </a>
             {% endfor %}
-        </div>
 
-        <a id="decouvrir" href="produit.html">
-            <h3>Découvrir</h3>
-            <img src="https://image.flaticon.com/icons/svg/271/271226.svg" height="20px">
-        </a>
+        </div>
 
     </section>
 

@@ -12,3 +12,12 @@ require('../css/app.scss');
 // const $ = require('jquery');
 
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+
+let burger = document.getElementById('burger'),
+    nav    = document.getElementById('main-nav'),
+    slowmo = document.getElementById('slowmo');
+
+burger.addEventListener('click', function(e){
+    this.classList.toggle('is-open');
+    nav.classList.toggle('is-open');
+});

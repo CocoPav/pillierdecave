@@ -8,7 +8,6 @@
   left: 0;
   bottom: 0;
   text-align: center;
-  background: #FFF;
   opacity: 0;
   z-index: -1;
   visibility: hidden;
@@ -29,7 +28,8 @@
   bottom: 0;
   left: 0;
   right: -15px;
-  background: #FEDC2A;
+  background: rgba(254,200,46,0.9);
+  opacity: 0.75%;
   transform-origin: 0 0;
   transform: skew(-14deg) translateX(-120%);
   transition: all .275s .1s;
@@ -92,7 +92,7 @@
 .main-nav a {
   display: block;
   padding: 12px 0;
-  color: #5A3B5D;
+  color: #000;
   font-size: 1.4em;
   text-decoration: none;
   font-weight: bold;

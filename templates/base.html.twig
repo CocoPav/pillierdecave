@@ -22,6 +22,7 @@
         <nav class="main-nav" id="main-nav">
             <ul>
                 <li><a href="#">Accueil</a></li>
+                <li><a href="{{ path('app_login') }}">Connexion</a></li>
                 <li><a href="#">Nos produits</a></li>
                 <li><a href="#">Qui sommes-nous</a></li>
                 <li><a href="#">Nous contacter</a></li>
@@ -37,8 +38,8 @@
 
     <footer>
         <ul>
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Nos Boxs</a></li>
+            <li><a href="{{ path('homepage') }}">Accueil</a></li>
+            <li><a href="{{ path('box_index') }}">Nos Boxs</a></li>
             <li><a href="#">Vos préférences</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
@@ -46,6 +47,8 @@
     </footer>
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
+
     {% endblock %}
     </body>
+
 </html>

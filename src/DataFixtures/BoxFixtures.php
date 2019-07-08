@@ -12,13 +12,13 @@ class BoxFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
      
-        $découverte = new Box();
-        $découverte->setTitle("découverte");
-        $découverte->setDescription("Ceci est une description");
-        $découverte->setImage("box1.jpg");
-        $découverte->setPrice(12);
-        $manager->persist($découverte);
-        $this->addReference("box-découverte", $découverte);
+        $decouverte = new Box();
+        $decouverte->setTitle("découverte");
+        $decouverte->setDescription("Ceci est une description");
+        $decouverte->setImage("box1.jpg");
+        $decouverte->setPrice(12);
+        $manager->persist($decouverte);
+        $this->addReference("box-découverte", $decouverte);
 
        
         $surmesure = new Box();

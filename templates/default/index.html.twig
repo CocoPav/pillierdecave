@@ -10,14 +10,16 @@
             <p class="sous-titre">Trois boxs à découvrir, avec des alcools exceptionnels</p>
         </div>
 
-        <div class="carousel">
+        <div class="carousel ">
             {% for box in boxes %}
+                <div>
                     {{ box.title }}
-                    {{ asset('images/' ~ box.Image()) }}
+                <img class="imagebox" src={{ asset('images/' ~ box.image) }}  />
                 <a id="decouvrir" href="{{ path('box_show', {'id': box.id}) }}">
                     <h3>Découvrir</h3>
                     <img src="https://image.flaticon.com/icons/svg/271/271226.svg" height="20px">
                 </a>
+                </div>
             {% endfor %}
 
         </div>

@@ -49,10 +49,12 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="user_show", methods={"GET"})
+     * @Route("/{id}", name="user_show", methods={"POST"})
      */
     public function show(User $user): Response
     {
+        $user = $this->getDoctrine()->getRepository(User::class)->find($user->getId());
+
         return $this->render('user/show.html.twig', [
             'user' => $user
         ]);

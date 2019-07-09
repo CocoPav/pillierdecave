@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}UserBox index{% endblock %}
+
+{% block body %}
+    <h1>UserBox index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>CreatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user_box in user_boxes %}
+            <tr>
+                <td>{{ user_box.id }}</td>
+                <td>{{ user_box.createdAt ? user_box.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('user_box_show', {'id': user_box.id}) }}">show</a>
+                    <a href="{{ path('user_box_edit', {'id': user_box.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('user_box_new') }}">Create new</a>
+{% endblock %}

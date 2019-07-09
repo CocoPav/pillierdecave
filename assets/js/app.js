@@ -14,8 +14,7 @@ require('../css/app.scss');
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
 
 let burger = document.getElementById('burger'),
-    nav    = document.getElementById('main-nav'),
-    slowmo = document.getElementById('slowmo');
+    nav    = document.getElementById('main-nav')
 
 burger.addEventListener('click', function(e){
     this.classList.toggle('is-open');

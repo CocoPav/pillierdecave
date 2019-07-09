@@ -12,7 +12,7 @@
 </head>
 
     <header>
-        <a id="logo" href="index.html"><h1>Pilier de Cave</h1></a>
+        <a id="logo" href="{{ path('homepage') }}"><h1>Pilier de Cave</h1></a>
         <a id="pannier" href="#">Pannier</a>
         <button id="burger" class="open-main-nav">
             <span class="burger"></span>
@@ -22,7 +22,12 @@
         <nav class="main-nav" id="main-nav">
             <ul>
                 <li><a href="#">Accueil</a></li>
-                <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                {% if not app.user %}
+                    <li><a href="{{ path('app_login') }}">Connexion</a></li>
+                    <li><a href="{{ path('app_register') }}">Inscription</a></li>
+                {% else %}
+                    <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+                {% endif %}
                 <li><a href="#">Nos produits</a></li>
                 <li><a href="#">Qui sommes-nous</a></li>
                 <li><a href="#">Nous contacter</a></li>

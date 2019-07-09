@@ -43,7 +43,7 @@
 .main-nav ul {
   display: inline-flex;
   flex-direction: column;
-  height: 93%; /* Should be 100%, but we have a notice message :D */
+  height: 50%; /* Should be 100%, but we have a notice message :D */
   align-items: flex-end;
   justify-content: center;
   transform: translateX(-18%) skew(-16deg);

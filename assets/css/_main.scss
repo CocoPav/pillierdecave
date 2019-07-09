@@ -11,7 +11,7 @@ body {
   min-height: 700px;
   width: 100%;
   margin: 20px auto;
-  box-shadow: 0px 1px 3px 0px rgba(0,0,0,.75);
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.75);
   border-radius: 4px;
 }
 
@@ -134,9 +134,10 @@ h2::after {
 .carousel {
   display: flex;
   background-color: #ffca00;
-  height: 310px;
   width: calc(100% - 72px);
   margin: 20px 36px;
+  padding: 10px;
+  overflow-x: scroll;
 }
 
 #decouvrir {
@@ -196,6 +197,67 @@ h2::after {
 
 .lastbox p {
   text-align: center;
+}
+/* --- formulaire login ---*/
+
+#formlogin {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+  margin: 0 36px;
+  padding: 10px;
+  background-color: #ffca00;
+}
+
+#formlogin input {
+  margin: 0 0 20px;
+  height: 30px;
+  padding-left: 10px;
+}
+
+#formlogin button {
+  display: block;
+  margin: 10px auto;
+  height: 30px;
+  width: 100px;
+  border: none;
+  background-color: #ffffff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* --- User Show --- */
+.table {
+  overflow-x: scroll;
+}
+th,td {
+  padding: 10px;
+}
+.container_table {
+  width: 100%;
+  overflow-x: scroll;
+  margin: 0 0 20px;
+
+}
+.title_table {
+  background-color: #ffca00;
+}
+tr {
+  padding: 5px;
+}
+
+#newuser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  height: 30px;
+  width: 200px;
+  background-color: #ffca00;
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 /* ---------- FOOTER ---------- */

@@ -27,10 +27,13 @@
                     <li><a href="{{ path('app_register') }}">Inscription</a></li>
                 {% else %}
                     <li><a href="{{ path('app_logout') }}">Déconnexion</a></li>
+                    <li><a href={{ path('user_show', {'id': user.id}) }}>Profil</a></li>
+
                 {% endif %}
                 <li><a href="#">Nos produits</a></li>
                 <li><a href="#">Qui sommes-nous</a></li>
                 <li><a href="#">Nous contacter</a></li>
+                <li><a href={{ path('user_index') }}>Admin</a></li>
             </ul>
         </nav>
     </header>

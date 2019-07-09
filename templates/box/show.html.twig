@@ -23,7 +23,8 @@
     {% if alcohols|length > 0 %}
         <ul>
             {% for alcohol in alcohols %}
-                <li>{{ alcohol.name }}</li>
+                <input type="checkbox" name="alcool" />
+                <label for="alcool"> {{ alcohol.name }} </label>
             {% endfor %}
         </ul>
     {% endif %}
@@ -31,9 +32,4 @@
     <a href="{{ path('box_index') }}">S'abonner </a>
     <a href="{{ path('box_index') }}">Acheter</a>
 
-    <a href="{{ path('box_index') }}">back to list</a>
-
-    <a href="{{ path('box_edit', {'id': box.id}) }}">edit</a>
-
-    {{ include('box/_delete_form.html.twig') }}
 {% endblock %}

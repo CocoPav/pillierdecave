@@ -8,6 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserBoxRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class UserBox
 {
@@ -111,4 +112,13 @@ class UserBox
 
         return $this;
     }
+
+    /**
+     * @ORM\PrePersist
+     */
+    public function prePersist()
+    {
+        $this->setCreatedAt(new \DateTime());
+    }
+
 }

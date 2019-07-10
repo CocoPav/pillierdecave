@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Box;
 use App\Entity\UserBox;
 use App\Form\UserBoxType;
 use App\Repository\UserBoxRepository;
@@ -26,26 +27,19 @@ class UserBoxController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="user_box_new", methods={"GET","POST"})
+     * @Route("/{id}/new", name="user_box_new", methods={"GET"})
      */
-    public function new(Request $request): Response
+    public function new(Box $box): Response
     {
         $userBox = new UserBox();
-        $form = $this->createForm(UserBoxType::class, $userBox);
-        $form->handleRequest($request);
+        $userBox->setBox($box);
+        $userBox->setUser($this->getUser());
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($userBox);
-            $entityManager->flush();
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($userBox);
+        $entityManager->flush();
 
-            return $this->redirectToRoute('user_box_index');
-        }
-
-        return $this->render('user_box/new.html.twig', [
-            'user_box' => $userBox,
-            'form' => $form->createView(),
-        ]);
+        return $this->redirectToRoute('homepage');
     }
 
     /**

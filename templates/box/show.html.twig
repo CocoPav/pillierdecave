@@ -29,7 +29,7 @@
         </ul>
     {% endif %}
 
-    <a href="{{ path('box_index') }}">S'abonner </a>
+    <a href="{{ path('user_box_new', {'id': box.id}) }}">S'abonner </a>
     <a href="{{ path('box_index') }}">Acheter</a>
 
 {% endblock %}

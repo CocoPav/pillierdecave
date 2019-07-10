@@ -86,6 +86,22 @@
   transition: all 275ms 425ms
 }
 
+.main-nav li:nth-child(7) a {
+  transition: all 275ms 475ms
+}
+
+.main-nav li:nth-child(8) a {
+  transition: all 275ms 525ms
+}
+
+.main-nav li:nth-child(9) a {
+  transition: all 275ms 575ms
+}
+
+.main-nav li:nth-child(10) a {
+  transition: all 275ms 625ms
+}
+
 /* Decoration */
 .main-nav ul,
 .main-nav li {
@@ -99,6 +115,7 @@
   font-size: 1.4em;
   text-decoration: none;
   font-weight: bold;
+  text-shadow: 1px 1px 0 #ffffff;
 }
 
 /* Burger Style */

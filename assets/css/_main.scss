@@ -133,30 +133,60 @@ h2::after {
 
 .carousel {
   display: flex;
-  background-color: #ffca00;
-  width: calc(100% - 72px);
-  margin: 20px 36px;
-  padding: 10px;
+  margin: 20px 0;
+  padding-bottom: 10px;
   overflow-x: scroll;
 }
 
-#decouvrir {
+.carousel:hover {
+  cursor: move;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.boxdecouverte {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+  margin: 0;
+  padding: 0 10px;
+}
+
+.titredecouverte {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.imagebox {
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.decouvrir {
   margin: 0 auto;
   display: flex;
   flex-direction: row;
   justify-content: center;
   cursor: pointer;
-}
-.imagebox {
-  width: 100px;
-  height: 100px;
+  background-color: #ffffff;
+  height: 30px;
 }
 
-#decouvrir h3 {
+.decouvrir p {
   position: relative;
   margin: 0;
+  color: #000000;
 }
-#decouvrir h3::after {
+.decouvrir p::after {
   position: absolute;
   display: block;
   top: 25px;
@@ -167,8 +197,9 @@ h2::after {
   border-radius: 2px;
   content: '';
 }
-#decouvrir img {
-  margin: auto 20px;
+.decouvrir img {
+  margin: auto;
+  margin-left: 10px;
 }
 
 #sectionlastbox {

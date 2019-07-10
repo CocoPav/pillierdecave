@@ -7,18 +7,18 @@
     <section>
         <div>
             <h2>DECOUVREZ<br>NOS BOXS</h2>
-            <p class="sous-titre">Trois boxs à découvrir, avec des alcools exceptionnels</p>
+            <p class="sous-titre">"Trois boxs à découvrir, avec des alcools exceptionnels"</p>
         </div>
 
-        <div class="carousel">
+        <div class="carousel dragscroll">
             {% for box in boxes %}
-                <div>
-                    {{ box.title }}
-                <img class="imagebox" src={{ asset('images/' ~ box.image) }}  />
-                <a id="decouvrir" href="{{ path('box_show', {'id': box.id}) }}">
-                    <h3>Découvrir</h3>
-                    <img src="https://image.flaticon.com/icons/svg/271/271226.svg" height="20px">
-                </a>
+                <div class="boxdecouverte">
+                    <p class="titredecouverte">{{ box.title }}</p>
+                    <img class="imagebox" src={{ asset('images/' ~ box.image) }}  />
+                    <a class="decouvrir" href="{{ path('box_show', {'id': box.id}) }}">
+                        <p>Découvrir</p>
+                        <img src="https://image.flaticon.com/icons/svg/271/271226.svg" height="20px">
+                    </a>
                 </div>
             {% endfor %}
 

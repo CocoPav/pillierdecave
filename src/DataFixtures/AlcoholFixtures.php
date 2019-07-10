@@ -32,10 +32,36 @@ class AlcoholFixtures extends Fixture implements DependentFixtureInterface
 
         $manager->flush();
 
-        $chateauneuf = new Alcohol();
-        $chateauneuf ->setName("Chateauneuf du Pape");
-        $chateauneuf ->setCategory($this->getReference("cat-vin"));
-        $manager->persist($chateauneuf );
+        $villageoise = new Alcohol();
+        $villageoise ->setName("Villageoise");
+        $villageoise ->setCategory($this->getReference("cat-vin"));
+        $manager->persist($villageoise );
+
+        $fourflower = new Alcohol();
+        $fourflower->setName("FourFlower");
+        $fourflower->setCategory($this->getReference("cat-whisky"));
+        $manager->persist($fourflower);
+
+
+        $ruinard = new Alcohol();
+        $ruinard ->setName("Ruinard");
+        $ruinard ->setCategory($this->getReference("cat-champagne"));
+        $manager->persist($ruinard);
+
+        $manager->flush();
+
+
+        $leffe = new Alcohol();
+        $leffe->setName("Leffe");
+        $leffe->setCategory($this->getReference("cat-biere"));
+        $manager->persist($leffe);
+
+        $manager->flush();
+
+        $chateaumargaux = new Alcohol();
+        $chateaumargaux ->setName("Chateauneuf Margaux");
+        $chateaumargaux ->setCategory($this->getReference("cat-vin"));
+        $manager->persist($chateaumargaux );
 
         $manager->flush();
     }

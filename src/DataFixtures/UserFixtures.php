@@ -28,6 +28,7 @@ class UserFixtures extends Fixture
         $admin->setBirthdate(new \DateTime("1997-01-01"));
         $password = $this->encoder->encodePassword($admin, 'admin');
         $admin->setPassword($password);
+        $admin->setRoles(["ROLE_ADMIN"]);
         $manager->persist($admin);
 
         $manager->flush();

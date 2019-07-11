@@ -3,55 +3,53 @@
 {% block title %}User{% endblock %}
 
 {% block body %}
-    <h1>User</h1>
-<div class="container_table">
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ user.id }}</td>
-            </tr>
-            <tr>
-                <th>Email</th>
-                <td>{{ user.email }}</td>
-            </tr>
-            <tr>
-                <th>Roles</th>
-                <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-            </tr>
-            <tr>
-                <th>Password</th>
-                <td>{{ user.password }}</td>
-            </tr>
-            <tr>
-                <th>Firstname</th>
-                <td>{{ user.firstname }}</td>
-            </tr>
-            <tr>
-                <th>Lastname</th>
-                <td>{{ user.lastname }}</td>
-            </tr>
-            <tr>
-                <th>Birthdate</th>
-                <td>{{ user.birthdate ? user.birthdate|date('Y-m-d') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <h1 style="margin-left: 36px">User</h1>
+    <div style="margin-left: 36px" class="container_table">
+        <table class="table" style="margin-bottom: 20px">
+            <tbody>
+                <tr>
+                    <th>Id :</th>
+                    <td>{{ user.id }}</td>
+                </tr>
+                <tr>
+                    <th>Firstname :</th>
+                    <td>{{ user.firstname }}</td>
+                </tr>
+                <tr>
+                    <th>Lastname :</th>
+                    <td>{{ user.lastname }}</td>
+                </tr>
+                <tr>
+                    <th>Email :</th>
+                    <td>{{ user.email }}</td>
+                </tr>
+                <tr>
+                    <th>Roles :</th>
+                    <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
+                </tr>
+                <tr>
+                    <th>Birthdate :</th>
+                    <td>{{ user.birthdate ? user.birthdate|date('Y-m-d') : '' }}</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <h3> Abonnements de l'utilisateur </h3>
-    {% for userBox in user.userBoxes %}
-        <tr>
+        <h3> Abonnements de l'utilisateur </h3>
+        {% for userBox in user.userBoxes %}
+            <tr>
 
-            <th>Box {{ userBox.box.title }}</th>
-            <td>{{ userBox.box.price }}€</td>
+                <th>Box {{ userBox.box.title }}</th>
+                <td>{{ userBox.box.price }}€</td>
 
-        </tr>
-    {% endfor %}
+            </tr>
+        {% endfor %}
 
-</div>
-    <a href="{{ path('user_index') }}">back to list</a>
+    </div>
+    <div style="margin-left: 36px; display: flex;justify-content: space-around">
+        <a href="{{ path('user_index') }}">Retour à la liste</a>
+        <a href="{{ path('user_edit', {'id': user.id}) }}">Éditer le profil</a>
+    </div>
 
-    <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
 
     {{ include('user/_delete_form.html.twig') }}
 {% endblock %}

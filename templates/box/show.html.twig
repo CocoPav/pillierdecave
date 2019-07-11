@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Box{% endblock %}
+{% block title %}{{ box.title }}{% endblock %}
 
 {% block body %}
-    <h1>Box</h1>
+    <h1 style="margin-left: 36px">Box</h1>
 
     <div class="titrepage">
         <a class="retour" href="{{ path('homepage') }}"><img src="https://image.flaticon.com/icons/svg/271/271226.svg" height="20px"></a>
@@ -12,11 +12,11 @@
 
     <div class="thumbnail">
         <img style="width: 100%;" src={{ asset('images/' ~ box.image) }}  />
-        <p class="thumbnailtitle">Titre de l'article</p>
+        <p style="font-size: 16px;text-transform: uppercase;text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;" class="thumbnailtitle">Titre de l'article</p>
     </div>
 
     <div class="description">
-        <h3>Description</h3>
+        <h3>{{ box.description }}</h3>
         <p>Ideo urbs venerabilis post superbas efferatarum gentium cervices oppressas latasque leges fundamenta libertatis et retinacula sempiterna velut frugi parens et prudens et dives Caesaribus tamquam liberis suis regenda patrimonii iura permisit.</p>
     </div>
 
@@ -31,7 +31,6 @@
 
 
 
-    <a href="{{ path('user_box_new', {'id': box.id}) }}">S'abonner </a>
-    <a href="{{ path('box_index') }}">Acheter</a>
+    <a style="display:flex;justify-content: center;align-items: center;margin: 20px auto;height: 30px;width: 200px;background-color: #ffca00; color: #000;border: double 4px #fff;" href="{{ path('user_box_new', {'id': box.id}) }}">S'abonner </a>
 
 {% endblock %}

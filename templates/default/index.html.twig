@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DefaultController!{% endblock %}
+{% block title %}Accueil{% endblock %}
 
 {% block body %}
 
@@ -29,25 +29,12 @@
     <div>
         <h2>NOS DENIERES<br>BOXS</h2>
         <section id="sectionlastbox">
-            <article class="lastbox">
-                <img src="">
-                <p>Box 1</p>
-            </article>
-
-            <article class="lastbox">
-                <img src="">
-                <p>Box 2</p>
-            </article>
-
-            <article class="lastbox">
-                <img src="">
-                <p>Box 3</p>
-            </article>
-
-            <article class="lastbox">
-                <img src="">
-                <p>Box 4</p>
-            </article>
+            {% for box in lastBoxes %}
+                <article class="lastbox">
+                    <img class="imagebox" src={{ asset('images/' ~ box.image) }}  />
+                    <p>{{ box.title }}</p>
+                </article>
+            {% endfor %}
         </section>
     </div>
 
